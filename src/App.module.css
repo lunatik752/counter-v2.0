@@ -1,0 +1,18 @@
+.App {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  height: 100vh;
+
+  /*background: #ffffff;*/
+}
+
+.installText {
+  padding: 20px;
+
+  font-size: 30px;
+  color: deepskyblue;
+  text-decoration: underline
+;
+}

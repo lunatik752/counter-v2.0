@@ -1,0 +1,20 @@
+.navbar {
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+
+    align-items: center;
+    height: 10vh;
+}
+
+.item a{
+    color: #00bfff;
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: 600;
+
+}
+
+.item a.active {
+    color: #0e08b1;
+}
