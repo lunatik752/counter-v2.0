@@ -9,6 +9,7 @@ const ButtonsAreaOutputBlock = (props) => {
     return (
         <div className={style.buttonsArea}>
             <Button title={'inc'}
+                    onClick={props.incrementCurrentValue}
             />
             <Button title={'reset'}
             />

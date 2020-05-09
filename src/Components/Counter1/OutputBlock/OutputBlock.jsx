@@ -7,10 +7,11 @@ import OutputValue from "./OutputValue/OutputValue";
 const OutputBlock = (props) => {
     return (
         <div className={style.outputBlock}>
-            <OutputValue state={props.state}/>
-            <ButtonsAreaOutputBlock state={props.state}
-                                    incrementCounterValue={props.incrementCounterValue}
-                                    reset={props.reset}/>
+            <OutputValue
+                currentValue={props.currentValue}/>
+            <ButtonsAreaOutputBlock
+                incrementCurrentValue={props.incrementCurrentValue}
+            />
         </div>
     );
 }

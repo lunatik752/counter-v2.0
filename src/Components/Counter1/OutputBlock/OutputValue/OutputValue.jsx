@@ -23,7 +23,7 @@ const OutputValue = (props) => {
 
     return (
         <div className={style.outputValueWrapper}>
-            <span>1</span>
+            <span>{props.currentValue}</span>
         </div>
 
     );

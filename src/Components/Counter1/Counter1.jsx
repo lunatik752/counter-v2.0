@@ -5,11 +5,18 @@ import OutputBlock from "./OutputBlock/OutputBlock";
 
 
 
-const Counter1 = () => {
+const Counter1 = (props) => {
     return (
         <div className={style.counterWrapper}>
-            <SettingsBlock/>
-            <OutputBlock />
+            <SettingsBlock startValue={props.startValue}
+                           maxValue={props.maxValue}
+                           setCounterValueSettings={props.setCounterValueSettings}
+                           updateStarsValue={props.updateStarsValue}
+                           updateMaxValue={props.updateMaxValue}
+            />
+            <OutputBlock currentValue={props.currentValue}
+                         incrementCurrentValue={props.incrementCurrentValue}
+            />
         </div>
     );
 }

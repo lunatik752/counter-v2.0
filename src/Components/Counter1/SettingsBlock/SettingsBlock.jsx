@@ -9,8 +9,13 @@ const SettingsBlock = (props) => {
 
     return (
         <div className={style.settingsBlock}>
-            <InputsAreaSettingsBlock />
-            <ButtonsAreaSettingsBlock/>
+            <InputsAreaSettingsBlock
+                startValue={props.startValue}
+                maxValue={props.maxValue}
+                updateStarsValue={props.updateStarsValue}
+                updateMaxValue={props.updateMaxValue}/>
+            <ButtonsAreaSettingsBlock
+                setCounterValueSettings={props.setCounterValueSettings}/>
         </div>
     );
 }
