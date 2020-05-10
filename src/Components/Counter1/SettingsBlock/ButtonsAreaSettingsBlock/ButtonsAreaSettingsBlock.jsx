@@ -8,7 +8,7 @@ const ButtonsAreaSettingsBlock = (props) => {
         <div className={style.buttonsArea}>
             <Button title={'set'}
                     onClick={props.setCounterValueSettings}
-                    disabled={props.disabled}/>
+                    disabled={props.isDisableSetButton}/>
         </div>
 
     );

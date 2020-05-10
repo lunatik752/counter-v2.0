@@ -6,17 +6,26 @@ import InputForSettings from "../../../InputForSettings/InputForSettings";
 
 const InputsAreaSettingsBlock = (props) => {
 
+ const   maxValue = props.maxValue;
+ const   startValue = props.startValue;
+
+
+    let inputMaxValueError = startValue >= maxValue;
+    let inputStartValueError = inputMaxValueError || startValue < 0;
+
+
     return (
         <div className={style.inputsArea}>
             <InputForSettings title={'max value'}
-                              inputValue={props.maxValue}
+                              isInputError={inputMaxValueError}
+                              inputValue={maxValue}
                               onChange={props.updateMaxValue}/>
             <InputForSettings title={'start value'}
-                              inputValue={props.startValue}
+                              isInputError={inputStartValueError}
+                              inputValue={startValue}
                               onChange={props.updateStarsValue}
             />
         </div>
-
     );
 }
 

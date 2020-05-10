@@ -7,12 +7,15 @@ const InputForSettings = (props) => {
         let value = Number(e.currentTarget.value);
         props.onChange(value);
     };
-    // let classNameInput = props.inputErrorClass ? style.input + ' ' + style.error : style.input;
+    let classNameInput = props.isInputError ? style.input + ' ' + style.error : style.input;
 
     return (
         <div className={style.inputForSettings}>
-            <span className={style.inputTitle}>{props.title}</span>
-            <input  type='number' onChange={onValueChange} value={props.inputValue}/>
+            <label className={style.inputTitle}>{props.title}</label>
+            <input  type='number'
+                    className={classNameInput}
+                    onChange={onValueChange}
+                    value={props.inputValue}/>
         </div>
 
     );

@@ -2,7 +2,7 @@ import {connect} from "react-redux";
 import Counter1 from "./Counter1";
 import {
     incrementCurrentValueAC,
-    setCounterValueSettingsAC,
+    setResetCounterValueSettingsAC,
     updateMaxValueAC,
     updateStarsValueAC
 } from "../../redux/counter1Reducer";
@@ -10,9 +10,7 @@ import {
 
 const mapStateToProps = (state) => {
     return {
-        startValue: state.counter1Page.startValue,
-        maxValue: state.counter1Page.maxValue,
-        currentValue: state.counter1Page.currentValue,
+        state: state.counter1Page
     }
 };
 
@@ -21,8 +19,8 @@ const mapDispatchToProps = (dispatch) => {
         incrementCurrentValue: () => {
             dispatch(incrementCurrentValueAC());
         },
-        setCounterValueSettings: () => {
-            dispatch(setCounterValueSettingsAC());
+        setResetCounterValueSettings: () => {
+            dispatch(setResetCounterValueSettingsAC());
         },
         updateStarsValue: (newValue) => {
             dispatch(updateStarsValueAC(newValue));

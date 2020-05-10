@@ -15,7 +15,9 @@ const SettingsBlock = (props) => {
                 updateStarsValue={props.updateStarsValue}
                 updateMaxValue={props.updateMaxValue}/>
             <ButtonsAreaSettingsBlock
-                setCounterValueSettings={props.setCounterValueSettings}/>
+                setCounterValueSettings={props.setCounterValueSettings}
+                isDisableSetButton={props.isDisableSetButton}/>
+
         </div>
     );
 }

@@ -10,5 +10,50 @@
   border-radius: 10px;
 }
 
+.outputValueWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  height: 50%;
+
+  border: 4px solid deepskyblue;
+  border-radius: 10px;
+}
 
 
+.outputValue {
+  color: deepskyblue;
+  font-size: 60px;
+  font-weight: 600;
+
+}
+
+.outputValueMax {
+  color: red;
+  font-size: 100px;
+  font-weight: bolder;
+}
+
+.outputValueText {
+  color: deepskyblue;
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.outputValueTextError {
+  font-size: 30px;
+  font-weight: 400;
+  color: red;
+}
+
+.buttonsWrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  border: 4px solid deepskyblue;
+  border-radius: 10px;
+  width: 90%;
+  height: 20%;
+}
