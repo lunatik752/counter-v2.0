@@ -1,19 +1,20 @@
-export const INCREMENT_CURRENT_VALUE = "counter1/reducer/INCREMENT_CURRENT_VALUE"
-export const SET_RESET_COUNTER_VALUES = "counter1/reducer/SET_RESET_COUNTER_VALUES"
-export const UPDATE_START_VALUE = "counter1/reducer/UPDATE_START_VALUE"
-export const UPDATE_MAX_VALUE = "counter1/reducer/UPDATE_MAX_VALUE"
+export const INCREMENT_CURRENT_VALUE = "counter2/reducer/INCREMENT_CURRENT_VALUE"
+export const SET_RESET_COUNTER_VALUES = "counter2/reducer/SET_RESET_COUNTER_VALUES"
+export const UPDATE_START_VALUE = "counter2/reducer/UPDATE_START_VALUE"
+export const UPDATE_MAX_VALUE = "counter2/reducer/UPDATE_MAX_VALUE"
+export const SHOW_SETTINGS_BLOCK = "counter2/reducer/SHOW_SETTINGS_BLOCK"
 
 
 let initialState = {
     startValue: 0,
     maxValue: 5,
     currentValue: 0,
-    isDisableSetButton: true,
     isDisableIncButton: false,
-    isDisableResetButton: false
+    isDisableSetButton: false,
+    isShowSettingsBlock: false
 }
 
-export const counter1Reducer = (state = initialState, action) => {
+export  const counter2Reducer = (state = initialState, action) => {
     switch (action.type) {
         case INCREMENT_CURRENT_VALUE:
             let currentValue = state.currentValue + 1;
@@ -27,10 +28,8 @@ export const counter1Reducer = (state = initialState, action) => {
             return {
                 ...state,
                 currentValue: state.startValue,
-                isDisableSetButton: true,
+                isShowSettingsBlock: false,
                 isDisableIncButton: false,
-                isDisableResetButton: false
-
             }
         case UPDATE_START_VALUE: {
             let newValue = action.newValue;
@@ -38,9 +37,7 @@ export const counter1Reducer = (state = initialState, action) => {
             return {
                 ...state,
                 startValue: newValue,
-                isDisableSetButton: isDisableSetButton,
-                isDisableIncButton: true,
-                isDisableResetButton: true
+                isDisableSetButton: isDisableSetButton
             }
         }
         case UPDATE_MAX_VALUE:
@@ -50,10 +47,15 @@ export const counter1Reducer = (state = initialState, action) => {
             return {
                 ...state,
                 maxValue: action.newValue,
-                isDisableSetButton: isDisableSetButton,
-                isDisableIncButton: true,
-                isDisableResetButton: true
+                isDisableSetButton: isDisableSetButton
             }
+
+        case SHOW_SETTINGS_BLOCK:
+            return {
+                ...state,
+                isShowSettingsBlock: true
+            }
+
         default:
             return state;
     }
@@ -74,6 +76,10 @@ export const updateStarsValueAC = (newValue) => {
 
 export const updateMaxValueAC = (newValue) => {
     return {type: UPDATE_MAX_VALUE, newValue};
+}
+
+export const showSettingsBlockAC = (newValue) => {
+    return {type: SHOW_SETTINGS_BLOCK, newValue};
 }
 
 
