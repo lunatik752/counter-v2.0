@@ -1,9 +1,9 @@
-export const INCREMENT_CURRENT_VALUE = "counter2/reducer/INCREMENT_CURRENT_VALUE"
-export const SET_RESET_COUNTER_VALUES = "counter2/reducer/SET_RESET_COUNTER_VALUES"
-export const UPDATE_START_VALUE = "counter2/reducer/UPDATE_START_VALUE"
-export const UPDATE_MAX_VALUE = "counter2/reducer/UPDATE_MAX_VALUE"
-export const SHOW_SETTINGS_BLOCK = "counter2/reducer/SHOW_SETTINGS_BLOCK"
-
+const INCREMENT_CURRENT_VALUE = "counter2/reducer/INCREMENT_CURRENT_VALUE"
+const SET_RESET_COUNTER_VALUES = "counter2/reducer/SET_RESET_COUNTER_VALUES"
+const UPDATE_START_VALUE = "counter2/reducer/UPDATE_START_VALUE"
+const UPDATE_MAX_VALUE = "counter2/reducer/UPDATE_MAX_VALUE"
+const SHOW_SETTINGS_BLOCK = "counter2/reducer/SHOW_SETTINGS_BLOCK"
+const SET_SAVED_VALUE = "counter2/reducer/SET_SAVED_VALUE"
 
 let initialState = {
     startValue: 0,
@@ -55,31 +55,42 @@ export  const counter2Reducer = (state = initialState, action) => {
                 ...state,
                 isShowSettingsBlock: true
             }
+        case SET_SAVED_VALUE:
+            debugger
+            return {
+                ...state,
+                startValue: action.state.startValue,
+                maxValue: action.state.maxValue,
+                currentValue: action.state.startValue
+            }
 
         default:
             return state;
     }
 }
 
-export const incrementCurrentValueAC = () => {
+export const incrementCurrentValue = () => {
     return {type: INCREMENT_CURRENT_VALUE}
 }
 
-export const setResetCounterValueSettingsAC = () => {
+export const setResetCounterValueSettings = () => {
     return {type: SET_RESET_COUNTER_VALUES};
 }
 
 
-export const updateStarsValueAC = (newValue) => {
+export const updateStarsValue = (newValue) => {
     return {type: UPDATE_START_VALUE, newValue};
 }
 
-export const updateMaxValueAC = (newValue) => {
+export const updateMaxValue = (newValue) => {
     return {type: UPDATE_MAX_VALUE, newValue};
 }
 
-export const showSettingsBlockAC = (newValue) => {
+export const showSettingsBlock = (newValue) => {
     return {type: SHOW_SETTINGS_BLOCK, newValue};
 }
 
+export const setSavedValues = (state) => {
+    return {type: SET_SAVED_VALUE, state};
+}
 

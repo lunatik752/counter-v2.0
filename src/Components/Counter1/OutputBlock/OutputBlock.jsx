@@ -34,7 +34,7 @@ const startValue = props.startValue;
                         disabled={props.isDisableIncButton}
                 />
                 <Button title={'reset'}
-                        onClick={props.resetCounterValueSettings}
+                        onClick={props.resetCounterValue}
                         disabled={props.isDisableResetButton}
                 />
             </div>

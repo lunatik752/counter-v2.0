@@ -10,7 +10,7 @@ const Counter1 = (props) => {
             <SettingsBlock startValue={props.state.startValue}
                            maxValue={props.state.maxValue}
                            isDisableSetButton={props.state.isDisableSetButton}
-                           setCounterValueSettings={props.setResetCounterValueSettings}
+                           setCounterValue={props.setCounterValue}
                            updateStarsValue={props.updateStarsValue}
                            updateMaxValue={props.updateMaxValue}
             />
@@ -20,7 +20,7 @@ const Counter1 = (props) => {
                          isDisableIncButton={props.state.isDisableIncButton}
                          isDisableSetButton={props.state.isDisableSetButton}
                          isDisableResetButton={props.state.isDisableResetButton}
-                         resetCounterValueSettings={props.setResetCounterValueSettings}
+                         resetCounterValue={props.resetCounterValue}
                          incrementCurrentValue={props.incrementCurrentValue}
 
             />

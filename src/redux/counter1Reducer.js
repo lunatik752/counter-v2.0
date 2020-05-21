@@ -1,7 +1,8 @@
-export const INCREMENT_CURRENT_VALUE = "counter1/reducer/INCREMENT_CURRENT_VALUE"
-export const SET_RESET_COUNTER_VALUES = "counter1/reducer/SET_RESET_COUNTER_VALUES"
-export const UPDATE_START_VALUE = "counter1/reducer/UPDATE_START_VALUE"
-export const UPDATE_MAX_VALUE = "counter1/reducer/UPDATE_MAX_VALUE"
+const INCREMENT_CURRENT_VALUE = "counter1/reducer/INCREMENT_CURRENT_VALUE"
+const SET_RESET_COUNTER_VALUES = "counter1/reducer/SET_RESET_COUNTER_VALUES"
+const UPDATE_START_VALUE = "counter1/reducer/UPDATE_START_VALUE"
+const UPDATE_MAX_VALUE = "counter1/reducer/UPDATE_MAX_VALUE"
+const SET_SAVED_VALUE = "counter1/reducer/SET_SAVED_VALUE"
 
 
 let initialState = {
@@ -54,26 +55,36 @@ export const counter1Reducer = (state = initialState, action) => {
                 isDisableIncButton: true,
                 isDisableResetButton: true
             }
+        case SET_SAVED_VALUE:
+            debugger
+            return {
+                ...state,
+                startValue: action.state.startValue,
+                maxValue: action.state.maxValue,
+                currentValue: action.state.startValue
+            }
         default:
             return state;
     }
 }
 
-export const incrementCurrentValueAC = () => {
+export const incrementCurrentValue = () => {
     return {type: INCREMENT_CURRENT_VALUE}
 }
 
-export const setResetCounterValueSettingsAC = () => {
+export const setResetCounterValueSettings = () => {
     return {type: SET_RESET_COUNTER_VALUES};
 }
 
 
-export const updateStarsValueAC = (newValue) => {
+export const updateStarsValue = (newValue) => {
     return {type: UPDATE_START_VALUE, newValue};
 }
 
-export const updateMaxValueAC = (newValue) => {
+export const updateMaxValue = (newValue) => {
     return {type: UPDATE_MAX_VALUE, newValue};
 }
 
-
+export const setSavedValues = (state) => {
+    return {type: SET_SAVED_VALUE, state};
+}

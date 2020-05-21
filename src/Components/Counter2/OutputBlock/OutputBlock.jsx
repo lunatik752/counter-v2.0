@@ -1,13 +1,12 @@
 import React from 'react';
 import style from './OutputBlock.module.css';
-
 import Button from "../../Button/Button";
 
 
 const OutputBlock = (props) => {
 
-const currentValue = props.currentValue;
-const maxValue = props.maxValue;
+    const currentValue = props.currentValue;
+    const maxValue = props.maxValue;
 
     const outputClass = currentValue < maxValue ? style.outputValue : style.outputValueMax;
 
@@ -22,13 +21,12 @@ const maxValue = props.maxValue;
                         disabled={props.isDisableIncButton}
                 />
                 <Button title={'reset'}
-                        onClick={props.resetCounterValueSettings}
+                        onClick={props.resetCounterValue}
                         disabled={props.isDisableResetButton}
                 />
                 <Button title={'set'}
                         onClick={props.showSettingsBlock}
                 />
-
             </div>
         </div>
     );

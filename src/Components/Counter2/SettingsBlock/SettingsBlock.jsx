@@ -1,11 +1,11 @@
 import React from 'react';
 import style from './SettingsBlock.module.css';
 import ButtonsAreaSettingsBlock from "./ButtonsAreaSettingsBlock/ButtonsAreaSettingsBlock";
-import InputsAreaSettingsBlock from "./InputsAreaSettingsBlock/InputsAreaSettingsBlock";
+import InputsAreaSettingsBlock from "../../Counter1/SettingsBlock/InputsAreaSettingsBlock/InputsAreaSettingsBlock";
+
 
 
 const SettingsBlock = (props) => {
-
 
     return (
         <div className={style.settingsBlock}>
@@ -15,9 +15,8 @@ const SettingsBlock = (props) => {
                 updateStarsValue={props.updateStarsValue}
                 updateMaxValue={props.updateMaxValue}/>
             <ButtonsAreaSettingsBlock
-                setCounterValueSettings={props.setCounterValueSettings}
+                setCounterValue={props.setCounterValue}
                 isDisableSetButton={props.isDisableSetButton}/>
-
         </div>
     );
 }
